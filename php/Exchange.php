@@ -851,6 +851,8 @@ abstract class Exchange {
 
         curl_setopt ($this->curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt ($this->curl, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt ($this->curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($this->curl, CURLOPT_HTTPPROXYTUNNEL, true);
 
         if ($this->userAgent)
             if (gettype ($this->userAgent) == 'string') {
